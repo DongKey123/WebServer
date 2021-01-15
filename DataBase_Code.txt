@@ -1,0 +1,49 @@
+C:\Bitnami\wampstack-7.1.26-2\mysql\bin>sho
+// -p 의 뒤는 비밀번호로 들어가지만 바로 입력하는 것은 좋지 않음
+<MYSQL>
+show databases;
+
+CREATE DATABASE studyweb CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+use studyweb;
+
+CREATE TABLE `topic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `author` varchar(30) NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `marketinfo` (
+  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `payment` varchar(100) NOT NULL,
+  `martid` varchar(100) NOT NULL,
+  `martpassword` varchar(100) NOT NULL,
+  `martname` varchar(100) NOT NULL,
+  `phonenumber` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `expirated` datetime NOT NULL,
+  `result` varchar(10) NOT NULL,
+  `sendnum_1` int(11) NOT NULL,
+  `sendnum_2` int(11) NOT NULL,
+  `member` int(11) NOT NULL,
+  `realphone` int(11) NOT NULL,
+  `assignmentphone` int(11) NOT NULL,
+  `needphone` int(11) NOT NULL,
+  `todaylogin` datetime NOT NULL,
+  `sendnum` int(11) NOT NULL,
+  `change` varchar(100) NOT NULL,
+  PRIMARY KEY(num)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+show tables;
+
+INSERT INTO `topic` (title,description,author,created) VALUES('about javascript','javascript is~','dongkey','2019-03-10 12:20:05');
+INSERT INTO `topic` (title,description,author,created) VALUES('Variable and Constant','javascript is~','dongkey','2019-03-10 12:20:05');
+INSERT INTO `topic` (title,description,author,created) VALUES('Operator','javascript is~','dongkey','2019-03-10 12:20:05');
+
+SELECT * FROM topic;
+SELECT title,author FROM topic;
+//help code https://opentutorials.org/module/1514/9386;
